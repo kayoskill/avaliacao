@@ -1,7 +1,7 @@
 from random import uniform
 import streamlit as st
 import datetime
-import locale
+#import locale
 from PIL import Image
 
 
@@ -19,7 +19,7 @@ def imagen_estrela(nota):
 
 st.set_page_config(page_title='Sistema de avaliação', page_icon='⭐', layout="wide",
                    initial_sidebar_state="auto", menu_items=None)
-locale.setlocale(locale.LC_TIME, 'pt_BR.UTF-8')
+#locale.setlocale(locale.LC_TIME, 'pt_BR.UTF-8')
 # Configuração do sidebar
 
 st.sidebar.title('Configurações')
