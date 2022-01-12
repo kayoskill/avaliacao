@@ -1,6 +1,5 @@
 from random import uniform
 import streamlit as st
-import pdfkit
 import datetime
 import locale
 from PIL import Image
