@@ -52,22 +52,41 @@ with col1:
     st.markdown(
         f'<h4>Desempenho</h4><br><h5>Nota: {desempenho}</h5>', unsafe_allow_html=True)
     st.image(imagen_estrela(desempenho), width=60)
+    st.markdown('<br>', unsafe_allow_html=True)
+
+    if desempenho != 1:
+        obs_desempenho = st.text_area('Dica para melhorar:', key='a')
 with col2:
     st.markdown(
         f'<h4>Manutenção</h4><br><h5>Nota: {manutencao}</h5>', unsafe_allow_html=True)
     st.image(imagen_estrela(manutencao), width=60)
+    st.markdown('<br>', unsafe_allow_html=True)
+
+    if manutencao != 1:
+        obs_manutencao = st.text_area('Dica para melhorar:', key='b')
 with col3:
     st.markdown(
         f'<h4>Compromisso</h4><br><h5>Nota: {compromisso}</h5>', unsafe_allow_html=True)
     st.image(imagen_estrela(compromisso), width=60)
+    st.markdown('<br>', unsafe_allow_html=True)
+    if compromisso != 1:
+        obs_compromisso = st.text_area(f'Dica para melhorar:', key='c')
 with col4:
     st.markdown(
         f'<h4>Pontualidade</h4><br><h5>Nota: {pontualidade}</h5>', unsafe_allow_html=True)
     st.image(imagen_estrela(pontualidade), width=60)
+    st.markdown('<br>', unsafe_allow_html=True)
+
+    if pontualidade != 1:
+        obs_pontualidade = st.text_area('Dica para melhorar:', key='d')
 with col5:
     st.markdown(
         f'<h4>Desenvolvimento</h4><br><h5>Nota:{desenvolvimento}</h5>', unsafe_allow_html=True)
     st.image(imagen_estrela(desenvolvimento), width=60)
+    st.markdown('<br>', unsafe_allow_html=True)
+
+    if desenvolvimento != 1:
+        obs_desenvolvimento = st.text_area('Dica para melhorar:', key='e')
 st.write('\n')
 st.markdown(f'<br>', unsafe_allow_html=True)
 st.markdown(f'<h1 style="text-align: center">O Resultado total da avaliação do mês de {mes} fico assim:</h1><br><br>',
@@ -81,10 +100,10 @@ with scol2:
 with scol3:
     st.text(f'\n')
     st.image(imagen_estrela(
-        (desempenho+compromisso+pontualidade+desenvolvimento+manutencao)/5), width=90, caption=f'Nota: {round(desempenho+compromisso+pontualidade+desenvolvimento+manutencao,2)}')
+        (desempenho+compromisso+pontualidade+desenvolvimento+manutencao)/5), width=90, caption=f'Nota: {round((desempenho+compromisso+pontualidade+desenvolvimento+manutencao)*2,2)}')
 with scol4:
     st.write('\n')
 with scol5:
     st.write('\n')
-if (desempenho+compromisso+pontualidade+desenvolvimento+manutencao)/5 == 1:
+if (desempenho+compromisso+pontualidade+desenvolvimento+manutencao) * 2 == 10:
     st.balloons()
